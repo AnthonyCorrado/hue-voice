@@ -1,0 +1,69 @@
+<ion-view view-title="Lights" class="light-view-container">
+  <ion-content class="background-style">
+
+    <div class="list list-inset">
+        <div ng-repeat="light in allLights">
+          <div class="item item-dark" ng-click="selectLight($index + 1)">
+
+            <div class="row">
+                <div class="col">{{ light.name }}</div>
+
+                <div class="col">
+                    off
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="light.state.on">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                    on
+                </div>
+
+            </div>
+            <br />
+
+                
+                <div class="list">
+                    <div class="row">
+                        <div class="col">Brightness: {{ light.state.bri }}</div>
+                        <div class="item range range-balanced">
+                            <i class="icon ion-ios7-sunny-outline"></i>
+                            <input type="range" name="volume" min="0" max="100" value="33"
+                                ng-model="light.state.bri">
+                            <i class="icon ion-ios7-sunny"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Hue: {{ light.state.hue }}</div>
+                        <div class="item range range-balanced">
+                            <i class="icon ion-ios7-sunny-outline"></i>
+                            <input type="range" name="volume" min="0" max="100" value="33"
+                                ng-model="light.state.hue">
+                            <i class="icon ion-ios7-sunny"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Saturation: {{ light.state.sat }}</div>
+                        <div class="item range range-balanced">
+                            <i class="icon ion-ios7-sunny-outline"></i>
+                            <input type="range" name="volume" min="0" max="100" value="33"
+                                ng-model="light.state.sat">
+                            <i class="icon ion-ios7-sunny"></i>
+                        </div>
+                    </div>
+                </div>
+
+            
+            
+            <br />
+            <div>Effect: {{ light.state.alert }}</div>
+            <div>Color Loop: {{ light.state.effect }}</div>
+          </div>
+        </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+
+<!-- <button ng-click="doStuff(person)" ng-hide="isSelected(person)">do stuff</button>
+     <button disabled ng-show="isSelected(person)">Working...</button> -->

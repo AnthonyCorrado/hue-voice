@@ -1,0 +1,52 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// Overrides -----------------------------
+$range-track-height:              6px !default;
+$range-slider-width:              15px !default;
+$range-slider-height:             22px !default;
+$range-slider-border-radius:      40% !default;
+$range-icon-size:                 24px !default;
+$range-slider-box-shadow:         0 0 2px rgba(0,0,0,.4), 0 2px 3px rgba(51,205,98,0.5) !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Custom varialbes ----------------------
+$hue-dark-gray:                    #252525;
+
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.position-right {
+    
+}
+
+.light-view-container {
+
+  .background-style {
+    background-color: $hue-dark-gray;  
+    }  
+}
+.range-container {
+    width: 70%;
+}
