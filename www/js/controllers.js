@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('RegisterCtrl', ['$scope', 'RegisterService', function($scope, RegisterService) {
+.controller('RegisterCtrl', ['$scope', 'RegisterService', function($scope, RegisterService, $timeout) {
 
   $scope.registerUser = function(name) {
     RegisterService.register(name)
@@ -9,14 +9,36 @@ angular.module('starter.controllers', [])
   };
 }])
 
-.controller('LightsCtrl', function($scope, MockData) {
+.controller('LightsCtrl', function($scope, MockData, $timeout) {
 
   var mockLightsReturn = MockData.getAllLights();
   console.log(mockLightsReturn);
 
   $scope.allLights = mockLightsReturn;
 
-  // ---------
+  $scope.effects = [
+      {'name': 'None', 'value': 'none'},
+      {'name':'Blink Once', 'value': 'select'},
+      {'name':'Blink 30', 'value': 'lselect'}
+  ];
+
+  $scope.colorLoop = {};
+  $scope.colorLoop.active = false;
+
+  $scope.$watch("colorLoop.active", function(newValue, oldValue) {
+    if ($scope.colorLoop.active) {
+      console.log('on');
+    }
+    else console.log('off');
+  });
+
+  $scope.selectedEffect = {};
+  $scope.selectedEffect.value = $scope.effects[0];
+  $scope.$watch("selectedEffect.value", function(newValue, oldValue) {
+    console.log($scope.selectedEffect.value.name);
+  });
+
+  // -----------
 
   $scope.isLightOn = true;
   // $scope.selectLight = function(index) {

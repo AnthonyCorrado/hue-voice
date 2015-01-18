@@ -15,13 +15,33 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+// Custom varialbes ----------------------
+$hue-dark-gray:                    #1a1a1a;
+$hue-dark-gray-light:              #262626;
+$box-shadow-green:                 2px 2px 2px 0px rgba(51, 205, 98, 0.5);
+
 // Overrides -----------------------------
+$stable:                          $hue-dark-gray !default;
+$dark:                            $hue-dark-gray-light !default;
+
 $range-track-height:              6px !default;
 $range-slider-width:              15px !default;
 $range-slider-height:             22px !default;
 $range-slider-border-radius:      40% !default;
 $range-icon-size:                 24px !default;
 $range-slider-box-shadow:         0 0 2px rgba(0,0,0,.4), 0 2px 3px rgba(51,205,98,0.5) !default;
+$item-border-width:               0;
+$range-default-track-bg:          #ccc !default;
+$neon-green:                      rgba(51,205,98,0.5);
+$light:                           $hue-dark-gray !default;
+$base-background-color:           $hue-dark-gray !default;
+$tabs-stripped:                   $hue-dark-gray !default;
+
+
+.ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+.ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline {
+    color: rgba(51,205,98, 1);
+}
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -29,16 +49,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-// Custom varialbes ----------------------
-$hue-dark-gray:                    #252525;
-
-
 body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-
-.position-right {
-    
 }
 
 .light-view-container {
@@ -49,4 +61,35 @@ body {
 }
 .range-container {
     width: 70%;
+}
+.tabs-striped .tabs {
+  background-color: $hue-dark-gray;
+  border: none;
+}
+.nav-override {
+    background-color: $hue-dark-gray !important;
+}
+.tab-title {
+    color: $neon-green;
+}
+.tabs-striped .tab-item.tab-item-active {
+    border: none !important;
+}
+.title-left {
+    text-align: center !important;
+}
+.title {
+    color: $neon-green !important;
+    font-size: 1.8em !important;
+    text-shadow: -1px -1px 7px rgba(51, 205, 98, 1);
+}
+.fix-text-left {
+    text-align: left !important;
+}
+.light-info-container {
+    .item {
+        padding: 5px 5px 0 5px;
+        border: none;
+        @include box-shadow($box-shadow-green);
+    }
 }
