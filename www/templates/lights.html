@@ -6,7 +6,7 @@
             <div class="item item-dark" ng-click="selectLight($index + 1)">
 
                 <div class="row">
-                    <div class="col fix-text-left" >{{ light.name }}</div>
+                    <div class="col fix-text-left text-color-cat" >{{ light.name }}</div>
 
                     <div class="col">
                         off
@@ -25,7 +25,7 @@
                 <div ng-show="true">
                     <div class="list">
                         <div class="row">
-                            <div class="col fix-text-left">Brightness: {{ light.state.bri }}</div>
+                            <div class="col fix-text-left text-color-cat">Brightness: {{ light.state.bri }}</div>
                             <div class="item item-royal-bg range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="1" max="254"
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fix-text-left">Hue: {{ light.state.hue }}</div>
+                            <div class="col fix-text-left text-color-cat">Hue: {{ light.state.hue }}</div>
                             <div class="item range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="65535"
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fix-text-left">Saturation: {{ light.state.sat }}</div>
+                            <div class="col fix-text-left text-color-cat">Saturation: {{ light.state.sat }}</div>
                             <div class="item range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="255"
@@ -65,7 +65,7 @@
                     </div>
                     
                     <div class="row">
-                        <div class="col col-75 fix-text-left">Color Loop</div>
+                        <div class="col fix-text-left text-color-cat">Color Loop</div>
 
                         <div class="col">
                             off
@@ -80,6 +80,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

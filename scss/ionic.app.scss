@@ -18,6 +18,7 @@ $dark:                            #444 !default;
 // Custom varialbes ----------------------
 $hue-dark-gray:                    #1a1a1a;
 $hue-dark-gray-light:              #262626;
+$hue-silver:                       #CCC;
 $box-shadow-green:                 2px 2px 2px 0px rgba(51, 205, 98, 0.5);
 
 // Overrides -----------------------------
@@ -92,4 +93,10 @@ body {
         border: none;
         @include box-shadow($box-shadow-green);
     }
+}
+.input-label {
+    color: $neon-green;
+}
+.text-color-cat {
+    color: $hue-silver;
 }

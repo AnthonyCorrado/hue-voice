@@ -7056,3 +7056,9 @@ body {
   border: none;
   -webkit-box-shadow: 2px 2px 2px 0px rgba(51, 205, 98, 0.5);
   box-shadow: 2px 2px 2px 0px rgba(51, 205, 98, 0.5); }
+
+.input-label {
+  color: rgba(51, 205, 98, 0.5); }
+
+.text-color-cat {
+  color: #CCC; }

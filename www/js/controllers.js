@@ -9,12 +9,16 @@ angular.module('starter.controllers', [])
   };
 }])
 
-.controller('LightsCtrl', function($scope, MockData, $timeout) {
+.controller('LightsCtrl', function($scope, MockData, $timeout, LightingService) {
 
   var mockLightsReturn = MockData.getAllLights();
-  console.log(mockLightsReturn);
 
-  $scope.allLights = mockLightsReturn;
+  LightingService.getAllLights.then(function(response) {
+    console.log(response.data);
+    $scope.allLights = response.data;
+  });
+
+  // $scope.allLights = mockLightsReturn;
 
   $scope.effects = [
       {'name': 'None', 'value': 'none'},
@@ -41,12 +45,12 @@ angular.module('starter.controllers', [])
   // -----------
 
   $scope.isLightOn = true;
-  // $scope.selectLight = function(index) {
-  //   LightingService.selectLight(index).then(function(response) {
-  //     console.log(response.data);
-  //     $scope.lights = response.data.name;
-  //   });
-  // };
+  $scope.selectLight = function(index) {
+    LightingService.selectLight(index).then(function(response) {
+      console.log(response.data);
+      $scope.lights = response.data.name;
+    });
+  };
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
