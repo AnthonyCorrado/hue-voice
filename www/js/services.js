@@ -1,8 +1,8 @@
 angular.module('starter.services', [])
 
-.factory('RegisterService', ['$http', function($http) {
+.factory('RegisterService', ['$http', '$rootScope', function($http, $rootScope) {
   var userInfo = {};
-  var url = X;
+  var url = $rootScope.URL_HUE;
 
   userInfo.register = (function(username) {
     var body = {
@@ -19,10 +19,10 @@ angular.module('starter.services', [])
   return userInfo;
 }])
 
-.factory('LightingService', ['$http', function($http) {
+.factory('LightingService', ['$http', '$rootScope', function($http, $rootScope) {
   var lightingData = {};
-  var username = X;
-  var url = X + username + '/lights';
+  var username = $rootScope.USERNAME_HUE;
+  var url = $rootScope.URL_HUE + username + '/lights';
 
   // get all lights available
   lightingData.getAllLights = (function() {
