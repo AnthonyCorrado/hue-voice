@@ -22,7 +22,7 @@ angular.module('starter.services', [])
 .factory('LightingService', ['$http', '$rootScope', function($http, $rootScope) {
   var lightingData = {};
   var username = $rootScope.USERNAME_HUE;
-  var url = $rootScope.URL_HUE + username + '/lights';
+  var url = $rootScope.URL_HUE + '/' + username;
 
   // get all lights available
   lightingData.getAllLights = (function() {
@@ -35,11 +35,19 @@ angular.module('starter.services', [])
 
   // select a single light in the group
   lightingData.selectLight = function(index) {
-    var lightData = $http.get(url + "/" + index);
+    var lightData = $http.get(url + '/lights' + "/" + index);
     lightData.then(function(response) {
       return response.data.state;
     });
     return lightData;
+  };
+
+  // sends action object to Hue API
+  lightingData.lightAction = function(light_id, dataObj) {
+    var res = url + '/lights' + '/' + light_id + '/state';
+    console.log(res);
+    return $http.put(res, dataObj).success(function(data, status, headers) {
+    });
   };
 
   return lightingData;

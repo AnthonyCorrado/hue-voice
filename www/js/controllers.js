@@ -7,15 +7,39 @@ angular.module('starter.controllers', [])
       .then(function(response) {
     });
   };
+
 }])
 
-.controller('LightsCtrl', function($scope, MockData, $timeout, LightingService) {
+.controller('LightsCtrl', function($scope, MockData, $timeout, LightingService, $http) {
 
   var mockLightsReturn = MockData.getAllLights();
 
-  LightingService.getAllLights.then(function(response) {
-    console.log(response.data);
-    $scope.allLights = response.data;
+  // retrieve initial state of lights
+  (function() {
+    LightingService.getAllLights.then(function(response) {
+      console.log(response.data.lights);
+      $scope.allLights = response.data.lights;
+    });
+  })();
+
+  $scope.toggleOn = function(index, obj) {
+    console.log(obj.state.on);
+    var bool = obj.state.on;
+        bool = !bool;
+        obj = {"on": bool};
+        LightingService.lightAction(index, obj)
+          .then(function(response) {
+        });
+  };
+
+  $scope.$watch("light.state.on", function(newValue, oldValue) {
+      var lightnum = 1;
+
+      var obj = {"on": newValue};
+      console.log('object ' + obj );
+      LightingService.lightAction(lightnum, obj)
+        .then(function(response) {
+      });
   });
 
   // $scope.allLights = mockLightsReturn;
