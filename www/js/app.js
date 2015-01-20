@@ -53,7 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       views: {
         'tab-voice_input': {
           templateUrl: 'templates/voice_input.html',
-          controller: 'ChatsCtrl'
+          controller: 'VoiceCtrl'
         }
       }
     })
@@ -97,6 +97,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('tab/lights');
 
 });

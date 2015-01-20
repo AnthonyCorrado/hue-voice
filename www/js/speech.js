@@ -3,11 +3,17 @@ function onDeviceReady(){
 }
 
 function recognizeSpeech() {
-    var maxMatches = 5;
+    var maxMatches = 1;
     var promptString = "Speak now"; // optional
     var language = "en-US";                     // optional
     window.plugins.speechrecognizer.startRecognize(function(result){
-        alert(result);
+        document.getElementById("speechResults").innerHTML = result;
+        if (result == "this is a test") {
+            alert('holy fuck this really worked!!!');
+        }
+        else if (result == "Anthony") {
+            alert('you mean the funniest person 2015!');
+        }
     }, function(errorMessage){
         console.log("Error message: " + errorMessage);
     }, maxMatches, promptString, language);

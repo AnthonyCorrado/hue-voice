@@ -19,7 +19,12 @@ $dark:                            #444 !default;
 $hue-dark-gray:                    #1a1a1a;
 $hue-dark-gray-light:              #262626;
 $hue-silver:                       #CCC;
-$box-shadow-green:                 2px 2px 2px 0px rgba(51, 205, 98, 0.5);
+//     --------  variables for future slide color change effect feature
+$box-shadow-green:                2px 2px 2px 0px rgba(51, 205,98, 0.5);
+$neon-green:                      rgba(51,205,98,0.6);
+$neon-green-full:                 rgba(51,205,98, 1);
+$range-slider-box-shadow:         0 0 2px rgba(0,0,0,.4), 0 2px 3px rgba(51,205,98,0.5) !default;
+$balanced:                        rgba(51,205,98, 1);
 
 // Overrides -----------------------------
 $stable:                          $hue-dark-gray !default;
@@ -30,10 +35,9 @@ $range-slider-width:              15px !default;
 $range-slider-height:             22px !default;
 $range-slider-border-radius:      40% !default;
 $range-icon-size:                 24px !default;
-$range-slider-box-shadow:         0 0 2px rgba(0,0,0,.4), 0 2px 3px rgba(51,205,98,0.5) !default;
+
 $item-border-width:               0;
 $range-default-track-bg:          #ccc !default;
-$neon-green:                      rgba(51,205,98,0.5);
 $light:                           $hue-dark-gray !default;
 $base-background-color:           $hue-dark-gray !default;
 $tabs-stripped:                   $hue-dark-gray !default;
@@ -41,7 +45,7 @@ $tabs-stripped:                   $hue-dark-gray !default;
 
 .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
 .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline {
-    color: rgba(51,205,98, 1);
+    color: $neon-green-full;
 }
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -89,7 +93,7 @@ body {
 .title {
     color: $neon-green !important;
     font-size: 1.8em !important;
-    text-shadow: -1px -1px 7px rgba(51, 205, 98, 1);
+    text-shadow: -1px -1px 7px $neon-green-full;
 }
 .fix-text-left {
     text-align: left !important;

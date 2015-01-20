@@ -99,8 +99,7 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('ChatsCtrl', function($scope) {
-  
+.controller('VoiceCtrl', function($scope) {
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
