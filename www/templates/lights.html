@@ -1,5 +1,8 @@
+
 <ion-view view-title="Lights" class="light-view-container text-center">
   <ion-content class="background-style">
+  <div class="dark-background"></div>
+
 
     <div class="list list-inset">
         <div class="light-info-container" ng-repeat="light in allLights track by $index">
@@ -28,8 +31,10 @@
                             <div class="col fix-text-left text-color-cat">Brightness: {{ light.state.bri }}</div>
                             <div class="item item-royal-bg range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
-                                <input type="range" name="volume" min="1" max="254"
-                                    ng-model="light.state.bri">
+                                <input type="range" name="brightness" min="1" max="254"
+                                    ng-model="light.state.bri"
+                                    ng-change='adjustSlider($index + 1, light, "bri")'
+                                    ng-model-options="{ 'debounce': 130 }">
                                 <i class="icon ion-ios7-sunny"></i>
                             </div>
                         </div>
@@ -38,7 +43,9 @@
                             <div class="item range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="65535"
-                                    ng-model="light.state.hue">
+                                    ng-model="light.state.hue"
+                                    ng-change='adjustSlider($index + 1, light, "hue")'
+                                    ng-model-options="{ 'debounce': 130 }">
                                 <i class="icon ion-ios7-sunny"></i>
                             </div>
                         </div>
@@ -47,7 +54,9 @@
                             <div class="item range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="255"
-                                    ng-model="light.state.sat">
+                                    ng-model="light.state.sat"
+                                    ng-change='adjustSlider($index + 1, light, "sat")'
+                                    ng-model-options="{ 'debounce': 130 }">
                                 <i class="icon ion-ios7-sunny"></i>
                             </div>
                         </div>
@@ -59,7 +68,9 @@
                             <div class="input-label">
                                 Effect
                             </div>
-                            <select ng-model="selectedEffect.value" ng-options="effect.name for effect in effects" >
+                            <select ng-model="selectedEffect.value"
+                                ng-options="effect.name for effect in effects"
+                                ng-change="effectSelect($index + 1, selectedEffect.value)">
                             </select>
                         </label>
                     </div>
@@ -70,7 +81,8 @@
                         <div class="col">
                             off
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="colorLoop.active">
+                                <input type="checkbox"
+                                    ng-model="colorLoop.active" ng-click="toggleLoop($index + 1, colorLoop.active)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -78,6 +90,7 @@
                             on
                         </div>   
                     </div>
+
                 </div>
             </div>
 

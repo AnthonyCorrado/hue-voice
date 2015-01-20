@@ -22,27 +22,51 @@ angular.module('starter.controllers', [])
     });
   })();
 
+  // 
   $scope.toggleOn = function(index, obj) {
     console.log(obj.state.on);
     var bool = obj.state.on;
-        bool = !bool;
-        obj = {"on": bool};
-        LightingService.lightAction(index, obj)
-          .then(function(response) {
-        });
+    body = {"on": bool};
+    LightingService.lightAction(index, body)
+        .then(function(response) {
+    });
+    bool = !bool;
   };
 
-  $scope.$watch("light.state.on", function(newValue, oldValue) {
-      var lightnum = 1;
-
-      var obj = {"on": newValue};
-      console.log('object ' + obj );
-      LightingService.lightAction(lightnum, obj)
+  // updates light settings of targed slider after debounce value
+  $scope.adjustSlider = function(index, obj, param) {
+    var field;
+    console.log(obj.state.bri);
+    if (param == "bri") {
+        field = parseInt(obj.state.bri, 10);
+        body = {"bri": field};
+    }
+    else if (param == "hue") {
+        field = parseInt(obj.state.hue, 10);
+        body = {"hue": field};
+    }
+    else {
+        field = parseInt(obj.state.sat, 10);
+        body = {"sat": field};
+    }
+    LightingService.lightAction(index, body)
         .then(function(response) {
-      });
-  });
+    });
+  };
 
-  // $scope.allLights = mockLightsReturn;
+  $scope.toggleLoop = function(index, param) {
+    var effect;
+    if (!param) {
+        effect = "none";
+    }
+    else {
+        effect = "colorloop";
+    }
+    body = {"effect": effect};
+    LightingService.lightAction(index, body)
+        .then(function(response) {
+    });
+  };
 
   $scope.effects = [
       {'name': 'None', 'value': 'none'},
@@ -50,21 +74,14 @@ angular.module('starter.controllers', [])
       {'name':'Blink 30', 'value': 'lselect'}
   ];
 
-  $scope.colorLoop = {};
-  $scope.colorLoop.active = false;
-
-  $scope.$watch("colorLoop.active", function(newValue, oldValue) {
-    if ($scope.colorLoop.active) {
-      console.log('on');
-    }
-    else console.log('off');
-  });
-
+  $scope.effectSelect = function(index, effect) {
+    body = {"alert": effect.value};
+    LightingService.lightAction(index, body)
+        .then(function(response) {
+    });
+  };
   $scope.selectedEffect = {};
   $scope.selectedEffect.value = $scope.effects[0];
-  $scope.$watch("selectedEffect.value", function(newValue, oldValue) {
-    console.log($scope.selectedEffect.value.name);
-  });
 
   // -----------
 
@@ -75,13 +92,14 @@ angular.module('starter.controllers', [])
       $scope.lights = response.data.name;
     });
   };
+
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
+.controller('ChatsCtrl', function($scope) {
   
 })
 
@@ -93,4 +111,5 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+
 });

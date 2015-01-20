@@ -38,21 +38,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.sync', {
+    url: '/sync',
     views: {
-      'tab-register': {
-        templateUrl: 'templates/register.html',
+      'tab-sync': {
+        templateUrl: 'templates/sync.html',
         controller: 'RegisterCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.voice_input', {
+      url: '/voice_input',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
+        'tab-voice_input': {
+          templateUrl: 'templates/voice_input.html',
           controller: 'ChatsCtrl'
         }
       }
@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
-        'tab-chats': {
+        'tab-': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
         }

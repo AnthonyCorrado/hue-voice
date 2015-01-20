@@ -45,8 +45,9 @@ angular.module('starter.services', [])
   // sends action object to Hue API
   lightingData.lightAction = function(light_id, dataObj) {
     var res = url + '/lights' + '/' + light_id + '/state';
-    console.log(res);
+    console.log(dataObj);
     return $http.put(res, dataObj).success(function(data, status, headers) {
+      console.log(data);
     });
   };
 
