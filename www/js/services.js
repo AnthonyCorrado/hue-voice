@@ -54,7 +54,45 @@ angular.module('starter.services', [])
   return lightingData;
 }])
 
+.factory('VoiceService', function() {
+  var voiceData = {};
+  var lightNames = ['bedroom', 'floorstanding', 'lamp'];
+  var colorKeys = ['red', 'green', 'blue', 'orange', 'purple', 'pink', 'yellow', 'normal'];
+  voiceData.analyze = function(command) {
+    var i,x;
+    var colorName;
 
+    // checks for available light to change
+    var wordArray = command.split(" ");
+    for(i=0; i<wordArray.length; i++) {
+
+      for (x=0; x<lightNames.length; x++) {
+        if (wordArray[i] === lightNames[x]) {
+        }
+      }
+    }
+
+    // checks for color/hue
+    wordArray = command.split(" ");
+    for(i=0; i<wordArray.length; i++) {
+
+      for (x=0; x<colorKeys.length; x++) {
+        if (wordArray[i] === colorKeys[x]) {
+           colorName = colorKeys[x];
+        }
+      }
+    }
+    if(colorName === "red") {
+      wordArray = {"hue": 65000};
+    }
+    else if(colorName === "blue") {
+      wordArray = {"hue": 45000};
+    }
+
+    return wordArray;
+  };
+  return voiceData;
+})
 
 .factory('MockData', function() {
   var allLightData = {};
@@ -64,10 +102,10 @@ angular.module('starter.services', [])
 
       "1": {
           "state": {
-              "on": true,
-              "bri": 144,
-              "hue": 13088,
-              "sat": 212,
+              "on": false,
+              "bri": 1,
+              "hue": 0,
+              "sat": 0,
               "xy": [0.5128,0.4147],
               "ct": 467,
               "alert": "none",

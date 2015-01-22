@@ -7,8 +7,9 @@
         </button>
     </div>
 
-    <div style="color:white" id="speechResults">
-    </div>
+    <form novalidate class="simple-form">
+        <input type="text" ng-model="voice.command" id="speechResults" ng-click="onVoice()"/><br />
+    </form>
 
   </ion-content>
 </ion-view>

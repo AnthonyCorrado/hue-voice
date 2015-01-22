@@ -1,18 +1,14 @@
 <ion-view view-title="Register User">
   <ion-content>
 
-  <div class="row responsive-sm">
+  <div class="row register-wrap">
+        <label class="col-75 item item-input neon-placeholder">
+          <input class="neon-text" type="text" placeholder="Input Name" ng-model="username">
+        </label>
 
-    <div class="list">
-      <label class="item item-input">
-        <input type="text" placeholder="Register Name" ng-model="username">
-      </label>
-    </div>
-
-    <button class="button button-light" ng-click="registerUser(username)">
+    <button class="col button button-outline button-balanced thin-button" ng-click="registerUser(username)">
       Register
     </button>
-  
   </div>
 
   </ion-content>

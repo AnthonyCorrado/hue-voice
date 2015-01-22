@@ -12,13 +12,20 @@ angular.module('starter.controllers', [])
 
 .controller('LightsCtrl', function($scope, MockData, $timeout, LightingService, $http) {
 
+
   var mockLightsReturn = MockData.getAllLights();
+  $scope.allLights = mockLightsReturn;
 
   // retrieve initial state of lights
   (function() {
     LightingService.getAllLights.then(function(response) {
-      console.log(response.data.lights);
-      $scope.allLights = response.data.lights;
+      console.log(response.status);
+      if (response.status === 200) {
+        $scope.allLights = response.data.lights;
+      }
+      else {
+        $scope.allLights = mockLightsReturn;
+      }
     });
   })();
 
@@ -99,14 +106,24 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('VoiceCtrl', function($scope) {
+.controller('VoiceCtrl', function($scope, $timeout, VoiceService, LightingService) {
+  console.log(VoiceService.analyze('hello world'));
+
+  $scope.onVoice = function() {
+      var command = document.getElementById("speechResults").value;
+      var body = VoiceService.analyze(command);
+      console.log(body);
+      LightingService.lightAction(1 , body)
+        .then(function(response) {
+      });
+  };
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('ThemesCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };

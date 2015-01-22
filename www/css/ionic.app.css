@@ -14,7 +14,7 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-.ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic, .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline {
+.ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic, .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline, .ion-ios7-heart, .ion-ios7-heart-outline {
   color: #33cd62; }
 
 /*!
@@ -7074,3 +7074,43 @@ body {
 
 .button-reposition button {
   margin-top: 15px; }
+
+.simple-form input {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  color: rgba(51, 205, 98, 0.6); }
+
+.neon-placeholder {
+  text-align: center; }
+  .neon-placeholder input {
+    -webkit-box-shadow: 1px 2px 0px 1px rgba(51, 205, 98, 0.5);
+    box-shadow: 1px 2px 0px 1px rgba(51, 205, 98, 0.5);
+    border-radius: 2px; }
+    .neon-placeholder input::-moz-placeholder {
+      color: #33cd62; }
+    .neon-placeholder input:-ms-input-placeholder {
+      color: #33cd62; }
+    .neon-placeholder input::-webkit-input-placeholder {
+      color: #33cd62;
+      text-indent: 0; }
+
+.neon-text {
+  color: #33cd62 !important; }
+
+.register-wrap .thin-button {
+  width: 30%;
+  height: 10% !important;
+  border-left: none;
+  border: none;
+  margin-top: 5%;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(51, 205, 98, 0.5);
+  box-shadow: 1px 1px 0px 1px rgba(51, 205, 98, 0.5); }
+
+.theme-buttons {
+  color: #CCC;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 10%;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.4); }

@@ -21,6 +21,8 @@ $hue-dark-gray-light:              #262626;
 $hue-silver:                       #CCC;
 //     --------  variables for future slide color change effect feature
 $box-shadow-green:                2px 2px 2px 0px rgba(51, 205,98, 0.5);
+$box-shadow-green-full:           1px 1px 0px 1px rgba(51, 205,98, 0.5);
+$box-shadow-green-bottom:         1px 2px 0px 1px rgba(51, 205,98, 0.5);
 $neon-green:                      rgba(51,205,98,0.6);
 $neon-green-full:                 rgba(51,205,98, 1);
 $range-slider-box-shadow:         0 0 2px rgba(0,0,0,.4), 0 2px 3px rgba(51,205,98,0.5) !default;
@@ -44,7 +46,7 @@ $tabs-stripped:                   $hue-dark-gray !default;
 
 
 .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
-.ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline {
+.ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline, .ion-ios7-heart, .ion-ios7-heart-outline {
     color: $neon-green-full;
 }
 
@@ -118,4 +120,43 @@ body {
     button {
         margin-top: 15px;
     }
+}
+.simple-form {
+    input {
+        width: 90%;
+        margin: 0 auto;
+        background-color: $hue-dark-gray;
+        color: $neon-green;
+    }
+}
+.neon-placeholder {
+    text-align: center;
+    input {
+        @include placeholder($neon-green-full);
+        @include box-shadow($box-shadow-green-bottom);
+        border-radius: 2px;
+    }
+}
+.neon-text {
+    color: $neon-green-full !important;
+}
+.register-wrap {
+    .thin-button {
+        width: 30%;
+        height: 10% !important;
+        border-left: none;
+        border: none;
+        margin-top: 5%;
+        @include box-shadow($box-shadow-green-full);
+    }
+}
+
+// themes view ---------------------
+.theme-buttons {
+    color: $hue-silver;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 10%;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }

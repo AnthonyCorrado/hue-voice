@@ -7,7 +7,7 @@ function recognizeSpeech() {
     var promptString = "Speak now"; // optional
     var language = "en-US";                     // optional
     window.plugins.speechrecognizer.startRecognize(function(result){
-        document.getElementById("speechResults").innerHTML = result;
+        document.getElementById("speechResults").value = result;
         if (result == "this is a test") {
             alert('holy fuck this really worked!!!');
         }
