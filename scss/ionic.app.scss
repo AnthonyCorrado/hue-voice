@@ -22,6 +22,7 @@ $hue-silver:                       #CCC;
 //     --------  variables for future slide color change effect feature
 $box-shadow-green:                2px 2px 2px 0px rgba(51, 205,98, 0.5);
 $box-shadow-green-full:           1px 1px 0px 1px rgba(51, 205,98, 0.5);
+$box-shadow-red-full:             1px 1px 0px 1px rgba(255, 0,0, 0.5);
 $box-shadow-green-bottom:         1px 2px 0px 1px rgba(51, 205,98, 0.5);
 $neon-green:                      rgba(51,205,98,0.6);
 $neon-green-full:                 rgba(51,205,98, 1);
@@ -48,6 +49,9 @@ $tabs-stripped:                   $hue-dark-gray !default;
 .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
 .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline, .ion-ios7-heart, .ion-ios7-heart-outline {
     color: $neon-green-full;
+}
+.icon-red {
+    color: red;
 }
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -107,6 +111,9 @@ body {
         border: none;
         @include box-shadow($box-shadow-green);
     }
+    .item-red {
+        @include box-shadow($box-shadow-red-full);
+    }
 }
 .input-label {
     color: $neon-green;
@@ -152,11 +159,14 @@ body {
 }
 
 // themes view ---------------------
+.theme-wrap {
+    width: 100%;
+}
 .theme-buttons {
+    width: 30%;
     color: $hue-silver;
     text-align: center;
-    margin-top: 5%;
-    margin-left: 10%;
+    margin: 5%;
     height: 40px;
     border: 1px solid rgba(255, 255, 255, 0.4);
 }

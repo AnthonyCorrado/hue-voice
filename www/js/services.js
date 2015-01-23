@@ -94,6 +94,17 @@ angular.module('starter.services', [])
   return voiceData;
 })
 
+.factory('ThemesModel', function() {
+  return [
+    {'name': 'Vikings', 'color1': 'purple', 'color2': 'yellow'},
+    {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
+    {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
+    {'name': 'Vikings', 'color1': 'purple', 'color2': 'yellow'},
+    {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
+    {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
+  ];
+})
+
 .factory('MockData', function() {
   var allLightData = {};
 

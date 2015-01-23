@@ -1,10 +1,10 @@
-<ion-view view-title="Account">
+<ion-view view-title="Themes">
   <ion-content>
   
-    <div class="row">
-        <div class="col col-20 theme-buttons">First</div>
-        <div class="col col-20 theme-buttons">Second</div>
-        <div class="col col-20 theme-buttons">Third</div>
+    <div class="theme-wrap" ng-repeat="theme in themes">
+        <div  class="theme-buttons"
+            ng-style="colorOne(theme.color1, theme.color2)" ng-click="themeSelect(theme)">{{ theme.name }}</div>
     </div>
+
   </ion-content>
 </ion-view>

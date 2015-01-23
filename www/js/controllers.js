@@ -123,9 +123,62 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('ThemesCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+.controller('ThemesCtrl', function($scope, ThemesModel, LightingService) {
+
+  (function() {
+    $scope.themes = ThemesModel;
+    console.log($scope.themes.length);
+    var obj = $scope.themes;
+    var i,x;
+    console.log(obj.length);
+    for (i=0; i<obj.length; i++) {
+      console.log(obj[i].color1);
+    }
+  })();
+
+  $scope.colorOne = function(color1, color2) {
+    return {
+      'border-left': ('2px solid ' + color1),
+      'border-top': ('2px solid ' + color1),
+      'border-right': ('2px solid ' + color2),
+      'border-bottom': ('2px solid ' + color2),
+      'color': color1
+    };
+  };
+
+  $scope.themeSelect = function(colorObj) {
+    console.log(colorObj.color1);
+    var col1, col2;
+    if(colorObj.color1 == "purple") {
+      col1 = 48000;
+    }
+    else if(colorObj.color1 == "green") {
+      col1 = 25500;
+    }
+    else if(colorObj.color1 == "blue") {
+      col1 = 46800;
+    }
+    body1 = {
+      "hue": col1
+    };
+    LightingService.lightAction(1 , body1)
+      .then(function(response) {
+    });
+    if(colorObj.color2 == "yellow") {
+      col2 = 16500;
+    }
+    else if(colorObj.color2 == "silver") {
+      col2 = 34000;
+    }
+    else if(colorObj.color2 == "green") {
+      col2 = 31000;
+    }
+    body2 = {
+      "hue": col2
+    };
+    LightingService.lightAction(2 , body2)
+      .then(function(response) {
+    });
   };
 
 });

@@ -6,7 +6,7 @@
 
     <div class="list list-inset">
         <div class="light-info-container" ng-repeat="light in allLights track by $index">
-            <div class="item item-dark">
+            <div ng-class="{'item-red': light.state.hue > 50000 }"class="item item-dark">
 
                 <div class="row">
                     <div class="col fix-text-left text-color-cat" >{{ light.name }}</div>
@@ -29,7 +29,7 @@
                     <div class="list">
                         <div class="row">
                             <div class="col fix-text-left text-color-cat">Brightness: {{ light.state.bri }}</div>
-                            <div class="item item-royal-bg range range-balanced">
+                            <div ng-class="{'item-red': light.state.hue > 50000 }" class="item item-royal-bg range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="brightness" min="1" max="254"
                                     ng-model="light.state.bri"
@@ -40,7 +40,7 @@
                         </div>
                         <div class="row">
                             <div class="col fix-text-left text-color-cat">Hue: {{ light.state.hue }}</div>
-                            <div class="item range range-balanced">
+                            <div ng-class="{'item-red': light.state.hue > 50000 }" class="item range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="65535"
                                     ng-model="light.state.hue"
@@ -51,7 +51,7 @@
                         </div>
                         <div class="row">
                             <div class="col fix-text-left text-color-cat">Saturation: {{ light.state.sat }}</div>
-                            <div class="item range range-balanced">
+                            <div ng-class="{'item-red': light.state.hue > 50000 }" class="item range range-balanced">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="255"
                                     ng-model="light.state.sat"
@@ -64,7 +64,7 @@
                     <br />
 
                     <div class="list">
-                        <label class="item item-input item-select">
+                        <label ng-class="{'item-red': light.state.hue > 50000 }" class="item item-input item-select">
                             <div class="input-label">
                                 Effect
                             </div>
