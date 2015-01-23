@@ -50,6 +50,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   .state('tab.voice_input', {
       url: '/voice_input',
+      onEnter: function () {
+        recognizeSpeech();
+      },
       views: {
         'tab-voice_input': {
           templateUrl: 'templates/voice_input.html',
