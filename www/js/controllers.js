@@ -110,10 +110,12 @@ angular.module('starter.controllers', [])
   console.log(VoiceService.analyze('hello world'));
 
   $scope.onVoice = function() {
-      var command = document.getElementById("speechResults").value;
+      command = $scope.voice;
+      console.log('this triggered');
+      console.log(command);
       var body = VoiceService.analyze(command);
-      console.log(body);
-      LightingService.lightAction(1 , body)
+      console.log(body[0].number);
+      LightingService.lightAction(body[0].number , body[1])
         .then(function(response) {
       });
   };
@@ -123,7 +125,7 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('ThemesCtrl', function($scope, ThemesModel, LightingService) {
+.controller('ThemesCtrl', function($scope, ThemesModel, LightingService, ColorService) {
 
   (function() {
     $scope.themes = ThemesModel;
@@ -147,38 +149,13 @@ angular.module('starter.controllers', [])
   };
 
   $scope.themeSelect = function(colorObj) {
-    console.log(colorObj.color1);
     var col1, col2;
-    if(colorObj.color1 == "purple") {
-      col1 = 48000;
+    col1 = ColorService.getHueValue(colorObj.color1);
+    col2 = ColorService.getHueValue(colorObj.color2);
+    var body = [{"hue": col1}, {"hue": col2}];
+    for (i=1; i<3; i++) {
+      LightingService.lightAction(i , body[i-1]);
     }
-    else if(colorObj.color1 == "green") {
-      col1 = 25500;
-    }
-    else if(colorObj.color1 == "blue") {
-      col1 = 46800;
-    }
-    body1 = {
-      "hue": col1
-    };
-    LightingService.lightAction(1 , body1)
-      .then(function(response) {
-    });
-    if(colorObj.color2 == "yellow") {
-      col2 = 16500;
-    }
-    else if(colorObj.color2 == "silver") {
-      col2 = 34000;
-    }
-    else if(colorObj.color2 == "green") {
-      col2 = 31000;
-    }
-    body2 = {
-      "hue": col2
-    };
-    LightingService.lightAction(2 , body2)
-      .then(function(response) {
-    });
   };
 
 });

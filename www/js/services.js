@@ -54,20 +54,35 @@ angular.module('starter.services', [])
   return lightingData;
 }])
 
-.factory('VoiceService', function() {
+
+.factory('GroupService', function($http, $rootScope) {
+  var groupData = {};
+  var username = $rootScope.USERNAME_HUE;
+  var url = $rootScope.URL_HUE + '/' + username + '/groups/';
+
+  groupData.getMainGroup = (function() {
+    return $http.get(url + "0");
+  })();
+
+  return groupData;
+})
+
+.factory('VoiceService', function(ColorService) {
   var voiceData = {};
-  var lightNames = ['bedroom', 'floorstanding', 'lamp'];
+  var lightKeys = ['one', 'two'];
   var colorKeys = ['red', 'green', 'blue', 'orange', 'purple', 'pink', 'yellow', 'normal'];
   voiceData.analyze = function(command) {
     var i,x;
     var colorName;
+    var lightName;
 
     // checks for available light to change
     var wordArray = command.split(" ");
     for(i=0; i<wordArray.length; i++) {
 
-      for (x=0; x<lightNames.length; x++) {
-        if (wordArray[i] === lightNames[x]) {
+      for (x=0; x<lightKeys.length; x++) {
+        if (wordArray[i] === lightKeys[x]) {
+          lightName = lightKeys[x];
         }
       }
     }
@@ -82,27 +97,15 @@ angular.module('starter.services', [])
         }
       }
     }
-    if(colorName === "red") {
-      wordArray = {"hue": 65000};
-    }
-    else if(colorName === "blue") {
-      wordArray = {"hue": 45000};
-    }
+
+    console.log(lightName);
+    console.log(colorName);
+    var hueNumber = ColorService.getHueValue(colorName);
+    wordArray = [{"number": 1},{"hue": hueNumber}];
 
     return wordArray;
   };
   return voiceData;
-})
-
-.factory('ThemesModel', function() {
-  return [
-    {'name': 'Vikings', 'color1': 'purple', 'color2': 'yellow'},
-    {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
-    {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
-    {'name': 'Vikings', 'color1': 'purple', 'color2': 'yellow'},
-    {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
-    {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
-  ];
 })
 
 .factory('MockData', function() {
