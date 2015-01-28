@@ -130,7 +130,7 @@ angular.module('starter.controllers', [])
 
 .controller('ThemesCtrl', function($scope, ThemesModel, LightingService, ColorService) {
 
-  $scope.themes = ThemesModel;
+  $scope.themes = ThemesModel.getAllThemes();
 
   $scope.colorOne = function(color1, color2) {
     return {

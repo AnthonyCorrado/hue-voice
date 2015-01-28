@@ -46,6 +46,18 @@ angular.module('ColorService', [])
             case "silver":
                 value = 34000;
                 break;
+            case "Eagles":
+                value = {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'};
+                break;
+            case "Vikings":
+                value = {'name': 'Vikings', 'color1': 'purple', 'color2': 'yellow'};
+                break;
+            case "Timberwolves":
+                value = {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'};
+                break;
+            case "princess":
+                value = {'name': 'Smooth', 'color1': 'purple', 'color2': 'blue'};
+                break;
             }
         return value;
     };
@@ -54,14 +66,21 @@ angular.module('ColorService', [])
 }])
 
 .factory('ThemesModel', function() {
-  return [
-    {'name': 'Vikings', 'color1': 'purple', 'color2': 'yellow'},
-    {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
-    {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
-    {'name': 'Smooth', 'color1': 'purple', 'color2': 'blue'},
-    {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
-    {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
-  ];
+    var themesData = {};
+
+    themesData.getAllThemes = function() {
+        return [
+            {'name': 'Vikings', 'color1': 'purple', 'color2': 'yellow'},
+            {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
+            {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
+            {'name': 'Smooth', 'color1': 'purple', 'color2': 'blue'},
+            {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
+            {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
+        ];
+    };
+
+    return themesData;
+
 
   // var allThemes = {};
 
