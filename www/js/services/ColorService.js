@@ -56,4 +56,15 @@ angular.module('ColorService', [])
     {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
     {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
   ];
+
+  // var allThemes = {};
+
+  // allThemes.getThemes = function() {
+  //   var i,x;
+  //   console.log(themes.length);
+  //   for (i=0; i<themes.length; i++) {
+  //     console.log(themes[i].color1);
+  //   } 
+  // };
+
 });

@@ -107,11 +107,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('VoiceCtrl', function($scope, $timeout, VoiceService, LightingService) {
-  console.log(VoiceService.analyze('hello world'));
 
   $scope.onVoice = function() {
       command = $scope.voice;
-      console.log('this triggered');
       console.log(command);
       var body = VoiceService.analyze(command);
       console.log(body[0].number);
@@ -127,16 +125,7 @@ angular.module('starter.controllers', [])
 
 .controller('ThemesCtrl', function($scope, ThemesModel, LightingService, ColorService) {
 
-  (function() {
-    $scope.themes = ThemesModel;
-    console.log($scope.themes.length);
-    var obj = $scope.themes;
-    var i,x;
-    console.log(obj.length);
-    for (i=0; i<obj.length; i++) {
-      console.log(obj[i].color1);
-    }
-  })();
+  $scope.themes = ThemesModel;
 
   $scope.colorOne = function(color1, color2) {
     return {
