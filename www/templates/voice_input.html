@@ -1,14 +1,14 @@
 <ion-view view-title="Voice Actions">
   <ion-content>
 
-    <div class="button-reposition">
-        <button class="button button-outline button-full button-balanced" onclick="recognizeSpeech();">
+    <div class="button-reposition" ng-init="onVoice()">
+        <button class="button button-outline button-full button-balanced" ng-click="onVoice()">
             Start recognition
         </button>
     </div>
-
+    {{ speechResult[0] }}
     <form novalidate class="simple-form">
-        <input type="text" ng-model="$parent.voice" id="speechResults" ng-click="onVoice()"/><br />
+        <input type="text" ng-model="$parent.voice" id="speechResults"/><br />
     </form>
   </ion-content>
 </ion-view>

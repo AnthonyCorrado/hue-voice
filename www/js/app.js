@@ -9,6 +9,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+    console.log($ionicPlatform);
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -50,9 +51,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   .state('tab.voice_input', {
       url: '/voice_input',
-      onEnter: function () {
-        recognizeSpeech();
-      },
       views: {
         'tab-voice_input': {
           templateUrl: 'templates/voice_input.html',

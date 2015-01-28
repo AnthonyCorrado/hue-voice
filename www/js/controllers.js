@@ -109,14 +109,19 @@ angular.module('starter.controllers', [])
 .controller('VoiceCtrl', function($scope, $timeout, VoiceService, LightingService) {
 
   $scope.onVoice = function() {
-      command = $scope.voice;
-      console.log(command);
-      var body = VoiceService.analyze(command);
-      console.log(body[0].number);
-      LightingService.lightAction(body[0].number , body[1])
-        .then(function(response) {
-      });
+    var maxMatches = 1;
+    window.plugins.speechrecognizer.startRecognize(function(result){
+      console.log(result);
+        $scope.$apply(function () {
+          $scope.voice = result[0];
+          var body = VoiceService.analyze(result[0]);
+          LightingService.lightAction(body[0].number , body[1])
+            .then(function(response) {
+          });
+        });
+    }, maxMatches);
   };
+
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {

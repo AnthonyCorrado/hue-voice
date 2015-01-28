@@ -4,6 +4,12 @@ angular.module('ColorService', [])
 
     colorData = {};
 
+    colorData.colorBank = [
+        'red', 'green', 'blue', 'orange',
+        'purple', 'pink', 'yellow', 'silver',
+        'white', 'neon', 'sky'
+    ];
+
     colorData.getHueValue = function(color) {
         var value;
         switch (color) {
@@ -22,7 +28,7 @@ angular.module('ColorService', [])
             case "white":
                 value = 34800;
                 break;
-            case "light":
+            case "sky":
                 value = 41680;
                 break;
             case "blue":
@@ -34,7 +40,7 @@ angular.module('ColorService', [])
             case "pink":
                 value = 54900;
                 break;
-            case "hot":
+            case "neon":
                 value = 61222;
                 break;
             case "silver":

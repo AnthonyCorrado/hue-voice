@@ -70,7 +70,7 @@ angular.module('starter.services', [])
 .factory('VoiceService', function(ColorService) {
   var voiceData = {};
   var lightKeys = ['one', 'two'];
-  var colorKeys = ['red', 'green', 'blue', 'orange', 'purple', 'pink', 'yellow', 'normal'];
+  var colorKeys = ColorService.colorBank;
   voiceData.analyze = function(command) {
     var i,x;
     var colorName;
