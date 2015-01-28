@@ -11,7 +11,7 @@ angular.module('ColorService', [])
     ];
 
     colorData.getHueValue = function(color) {
-        var value;
+        var value = {};
         switch (color) {
             case "red":
                 value = 0;
@@ -65,7 +65,7 @@ angular.module('ColorService', [])
 
 }])
 
-.factory('ThemesModel', function() {
+.factory('ThemesModel', function(ColorService, LightingService) {
     var themesData = {};
 
     themesData.getAllThemes = function() {
@@ -77,6 +77,19 @@ angular.module('ColorService', [])
             {'name': 'Eagles', 'color1': 'green', 'color2': 'silver'},
             {'name': 'Timberwolves', 'color1': 'blue', 'color2': 'green'},
         ];
+    };
+
+    themesData.themeSelect = function(colorObj) {
+        var themeData = {};
+        var col1, col2;
+        console.log(colorObj);
+            col1 = ColorService.getHueValue(colorObj.color1);
+            col2 = ColorService.getHueValue(colorObj.color2);
+            var body = [{"hue": col1}, {"hue": col2}];
+            for (i=1; i<3; i++) {
+              LightingService.lightAction(i , body[i-1]);
+        }
+        return themeData;
     };
 
     return themesData;

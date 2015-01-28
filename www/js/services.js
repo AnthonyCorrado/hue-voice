@@ -71,7 +71,7 @@ angular.module('starter.services', [])
   var voiceData = {};
   var lightKeys = ['one', 'two'];
   var colorKeys = ColorService.colorBank;
-  var themeKeys = ['Vikings', 'Eagles'];
+  var themeKeys = ['Vikings', 'Eagles', 'Timberwolves'];
   voiceData.analyze = function(command) {
     var i,x,y,z;
     var colorName;

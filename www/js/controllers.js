@@ -106,7 +106,7 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('VoiceCtrl', function($scope, $timeout, VoiceService, LightingService) {
+.controller('VoiceCtrl', function($scope, $timeout, VoiceService, LightingService, ThemesModel) {
 
   $scope.onVoice = function() {
     var maxMatches = 1;
@@ -115,9 +115,19 @@ angular.module('starter.controllers', [])
         $scope.$apply(function () {
           $scope.voice = result[0];
           var body = VoiceService.analyze(result[0]);
-          LightingService.lightAction(body[0].number , body[1])
-            .then(function(response) {
-          });
+          if(body.length === 2) {
+            LightingService.lightAction(body[0].number , body[1])
+              .then(function(response) {
+            });
+          }
+          else if(body.length === 3) {
+            console.log(body[0]);
+            console.log(body[0].color1);
+            console.log(body.color1);
+            console.log(body);
+            var themeData = {"color1": body[0], "color2": body[1]};
+            ThemesModel.themeSelect(themeData);
+          }
         });
     }, maxMatches);
   };
@@ -143,13 +153,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.themeSelect = function(colorObj) {
-    var col1, col2;
-    col1 = ColorService.getHueValue(colorObj.color1);
-    col2 = ColorService.getHueValue(colorObj.color2);
-    var body = [{"hue": col1}, {"hue": col2}];
-    for (i=1; i<3; i++) {
-      LightingService.lightAction(i , body[i-1]);
-    }
+    ThemesModel.themeSelect(colorObj);
   };
 
 });
