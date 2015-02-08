@@ -26,7 +26,7 @@ $box-shadow-red-full:             1px 1px 0px 1px rgba(255, 0,0, 0.5);
 $box-shadow-green-bottom:         1px 2px 0px 1px rgba(51, 205,98, 0.5);
 $neon-green:                      rgba(51,205,98,0.6);
 $neon-green-full:                 rgba(51,205,98, 1);
-$range-slider-box-shadow:         0 0 2px rgba(0,0,0,.4), 0 2px 3px rgba(51,205,98,0.5) !default;
+$range-slider-box-shadow:         0 0 2px rgba(0,0,0,.4), 0 2px 3px rgba(255,255,255,0.5) !default;
 $balanced:                        rgba(51,205,98, 1);
 
 // Overrides -----------------------------
@@ -45,13 +45,26 @@ $light:                           $hue-dark-gray !default;
 $base-background-color:           $hue-dark-gray !default;
 $tabs-stripped:                   $hue-dark-gray !default;
 
+// $red:                             #FF0000;
+// $orange:
+// $yellow: 
+// $green: 
+// $white:
+$blue:                            #0000FF !default;
+// $purple:
+// $pink:
+// $hotpink:
 
 .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
 .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline, .ion-ios7-heart, .ion-ios7-heart-outline {
-    color: $neon-green-full;
+    color: green;
+}
+
+#icon-color {
+    color: red !important;
 }
 .icon-red {
-    color: red;
+    color: red !important;
 }
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -169,4 +182,74 @@ body {
     margin: 5%;
     height: 40px;
     border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.toggle.toggle-balanced input:checked + .track-red {
+    background-color: red;
+    border: 1px solid red;
+}
+.toggle.toggle-balanced input:checked + .track-orange {
+    background-color: orange;
+    border: 1px solid orange;
+}
+.toggle.toggle-balanced input:checked + .track-yellow {
+    background-color: yellow;
+    border: 1px solid yellow;
+}
+.toggle.toggle-balanced input:checked + .track-green {
+    background-color: green;
+    border: 1px solid green;
+}
+.toggle.toggle-balanced input:checked + .track-white {
+    background-color: white;
+    border: 1px solid white;
+}
+.toggle.toggle-balanced input:checked + .track-blue {
+    background-color: blue;
+    border: 1px solid blue;
+}
+.toggle.toggle-balanced input:checked + .track-purple {
+    background-color: purple;
+    border: 1px solid purple;
+}
+.toggle.toggle-balanced input:checked + .track-pink {
+    background-color: pink;
+    border: 1px solid pink;
+}
+.toggle.toggle-balanced input:checked + .track-hotpink {
+    background-color: hotpink;
+    border: 1px solid hotpink;
+}
+
+.range {
+  @include display-flex();
+  @include align-items(center);
+  padding: 2px 11px;
+
+  &.range-red {
+    input { @include range-style($range-stable-track-bg); }
+  }
+  &.range-orange {
+    input { @include range-style($range-positive-track-bg); }
+  }
+  &.range-yellow {
+    input { @include range-style($range-calm-track-bg); }
+  }
+  &.range-green {
+    input { @include range-style($blue); }
+  }
+  &.range-white {
+    input { @include range-style($range-assertive-track-bg); }
+  }
+  &.range-blue {
+    input { @include range-style($range-energized-track-bg); }
+  }
+  &.range-purple {
+    input { @include range-style($range-royal-track-bg); }
+  }
+  &.range-pink {
+    input { @include range-style($range-dark-track-bg); }
+  }
+  &.range-hotpink {
+    input { @include range-style($range-dark-track-bg); }
+  }
 }

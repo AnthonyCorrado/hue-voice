@@ -10,8 +10,7 @@ angular.module('starter.controllers', [])
 
 }])
 
-.controller('LightsCtrl', function($scope, MockData, $timeout, LightingService, $http) {
-
+.controller('LightsCtrl', function($scope, MockData, $timeout, LightingService, $http, ColorService) {
 
   var mockLightsReturn = MockData.getAllLights();
   $scope.allLights = mockLightsReturn;
@@ -19,7 +18,6 @@ angular.module('starter.controllers', [])
   // retrieve initial state of lights
   (function() {
     LightingService.getAllLights.then(function(response) {
-      console.log(response.status);
       if (response.status === 200) {
         $scope.allLights = response.data.lights;
       }
@@ -31,7 +29,7 @@ angular.module('starter.controllers', [])
 
   // 
   $scope.toggleOn = function(index, obj) {
-    console.log(obj.state.on);
+    console.log(obj.state.hue);
     var bool = obj.state.on;
     body = {"on": bool};
     LightingService.lightAction(index, body)
@@ -43,13 +41,16 @@ angular.module('starter.controllers', [])
   // updates light settings of targed slider after debounce value
   $scope.adjustSlider = function(index, obj, param) {
     var field;
-    console.log(obj.state.bri);
     if (param == "bri") {
         field = parseInt(obj.state.bri, 10);
         body = {"bri": field};
     }
     else if (param == "hue") {
         field = parseInt(obj.state.hue, 10);
+        var color = ColorService.getColorValue(field);
+        var shadowObj = ColorService.setShadowColor(color);
+        $scope.toggleColor = "track-" + color;
+        $scope.shadowColor = shadowObj;
         body = {"hue": field};
     }
     else {

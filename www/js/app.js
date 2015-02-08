@@ -34,7 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab', {
     url: "/tab",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "templates/tabs.html",
+    controller: 'TabsCtrl'
   })
 
   // Each tab has its own nav history stack:
@@ -99,5 +100,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('tab/lights');
+
+})
+
+.controller('TabsCtrl', function($scope, ColorService) {
+
+  $scope.setFontColor = function(hue) {
+    hue = "red";
+    return { "color": hue };
+  };
 
 });

@@ -15,10 +15,13 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic, .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline, .ion-ios7-heart, .ion-ios7-heart-outline {
-  color: #33cd62; }
+  color: green; }
+
+#icon-color {
+  color: red !important; }
 
 .icon-red {
-  color: red; }
+  color: red !important; }
 
 /*!
   Ionicons, v1.5.2
@@ -5735,7 +5738,7 @@ input[type="range"] {
     height: 22px;
     border-radius: 40%;
     background-color: #1a1a1a;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4), 0 2px 3px rgba(51, 205, 98, 0.5);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4), 0 2px 3px rgba(255, 255, 255, 0.5);
     cursor: pointer;
     -webkit-appearance: none;
     border: 0; }
@@ -7123,3 +7126,71 @@ body {
   margin: 5%;
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.4); }
+
+.toggle.toggle-balanced input:checked + .track-red {
+  background-color: red;
+  border: 1px solid red; }
+
+.toggle.toggle-balanced input:checked + .track-orange {
+  background-color: orange;
+  border: 1px solid orange; }
+
+.toggle.toggle-balanced input:checked + .track-yellow {
+  background-color: yellow;
+  border: 1px solid yellow; }
+
+.toggle.toggle-balanced input:checked + .track-green {
+  background-color: green;
+  border: 1px solid green; }
+
+.toggle.toggle-balanced input:checked + .track-white {
+  background-color: white;
+  border: 1px solid white; }
+
+.toggle.toggle-balanced input:checked + .track-blue {
+  background-color: blue;
+  border: 1px solid blue; }
+
+.toggle.toggle-balanced input:checked + .track-purple {
+  background-color: purple;
+  border: 1px solid purple; }
+
+.toggle.toggle-balanced input:checked + .track-pink {
+  background-color: pink;
+  border: 1px solid pink; }
+
+.toggle.toggle-balanced input:checked + .track-hotpink {
+  background-color: hotpink;
+  border: 1px solid hotpink; }
+
+.range {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  padding: 2px 11px; }
+  .range.range-red input::-webkit-slider-thumb:before {
+    background: #b2b2b2; }
+  .range.range-orange input::-webkit-slider-thumb:before {
+    background: #387ef5; }
+  .range.range-yellow input::-webkit-slider-thumb:before {
+    background: #11c1f3; }
+  .range.range-green input::-webkit-slider-thumb:before {
+    background: #0000FF; }
+  .range.range-white input::-webkit-slider-thumb:before {
+    background: #ef473a; }
+  .range.range-blue input::-webkit-slider-thumb:before {
+    background: #ffc900; }
+  .range.range-purple input::-webkit-slider-thumb:before {
+    background: #886aea; }
+  .range.range-pink input::-webkit-slider-thumb:before {
+    background: #262626; }
+  .range.range-hotpink input::-webkit-slider-thumb:before {
+    background: #262626; }
