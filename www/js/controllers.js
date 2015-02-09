@@ -129,6 +129,7 @@ angular.module('starter.controllers', [])
         $scope.$apply(function () {
           $scope.voice = result[0];
           var body = VoiceService.analyze(result[0]);
+          console.log(body);
           if(body.length === 2) {
             LightingService.lightAction(body[0].number , body[1])
               .then(function(response) {

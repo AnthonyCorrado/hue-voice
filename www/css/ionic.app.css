@@ -7233,35 +7233,32 @@ input {
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out; }
 
-.text-color-cat {
-  color: rgba(255, 255, 255, 0.6); }
-
 .font-red {
-  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5); }
+  color: rgba(255, 0, 0, 0.5); }
 
 .font-orange {
-  text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.5); }
+  color: rgba(255, 140, 0, 0.5); }
 
 .font-yellow {
-  text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.5); }
+  color: rgba(255, 215, 0, 0.5); }
 
 .font-green {
-  text-shadow: 2px 2px 5px rgba(51, 205, 98, 0.5); }
+  color: rgba(51, 205, 98, 0.5); }
 
 .font-white {
-  text-shadow: 2px 2px 5px rgba(240, 240, 240, 0.5); }
+  color: rgba(240, 240, 240, 0.5); }
 
 .font-blue {
-  text-shadow: 2px 2px 5px rgba(0, 0, 205, 0.5); }
+  color: mediumblue; }
 
 .font-indigo {
-  text-shadow: 2px 2px 5px rgba(74, 0, 130, 0.5); }
+  color: #4a0082; }
 
 .font-hotpink {
-  text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5); }
+  color: rgba(255, 105, 180, 0.5); }
 
 .font-deeppink {
-  text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.5); }
+  color: rgba(255, 20, 147, 0.5); }
 
 .font-red, .font-orange, .font-yellow, .font-green, .font-white, .font-blue, .font-indigo, .font-hotpink, .font-deeppink {
   -webkit-transition: 0.8s ease-in-out;

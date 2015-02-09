@@ -333,35 +333,33 @@ input {
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
 }
-.text-color-cat {
-    color: rgba(255, 255, 255, 0.6);
-}
+
 .font-red {
-    text-shadow: 2px 2px 5px $red-trans;
+    color: $red-trans;
 }
 .font-orange {
-    text-shadow: 2px 2px 5px $orange-trans;
+    color: $orange-trans;
 }
 .font-yellow {
-    text-shadow: 2px 2px 5px $yellow-trans;
+    color: $yellow-trans;
 }
 .font-green {
-    text-shadow: 2px 2px 5px $green-trans;
+    color: $green-trans;
 }
 .font-white {
-    text-shadow: 2px 2px 5px $white-trans;
+    color: $white-trans;
 }
 .font-blue {
-    text-shadow: 2px 2px 5px $blue-trans;
+    color: $blue;
 }
 .font-indigo {
-    text-shadow: 2px 2px 5px $indigo-trans;
+    color: $indigo;
 }
 .font-hotpink {
-    text-shadow: 2px 2px 5px $hotpink-trans;
+    color: $hotpink-trans;
 }
 .font-deeppink {
-    text-shadow: 2px 2px 5px $deeppink-trans;
+    color: $deeppink-trans;
 }
 .font-red, .font-orange, .font-yellow, .font-green, .font-white, .font-blue,
 .font-indigo, .font-hotpink, .font-deeppink {
