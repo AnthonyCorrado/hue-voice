@@ -83,13 +83,13 @@ angular.module('ColorService', [])
             color = "blue";
         }
         else if (hue >= 47000 & hue < 53500) {
-            color = "purple";
+            color = "indigo";
         }
         else if (hue >= 53500 & hue < 59000) {
-            color = "pink";
+            color = "hotpink";
         }
         else if (hue >= 59000 & hue < 62500) {
-            color = "hotpink";
+            color = "deeppink";
         }
         else if (hue >= 62500) {
             color = "red";
@@ -102,26 +102,15 @@ angular.module('ColorService', [])
         return color;
     };
 
-  //   $scope.setShadowColor = function(hue) {
-  //   var color = ColorService.getColorValue(hue);
-  //   console.log(color);
-  //   newHue = "1px 2px 0px 1px " + color;
-  //   $scope.shadowColor = {
-  //     "-webkit-box-shadow": newHue,
-  //     "-moz-box-shadow": newHue,
-  //     "box-shadow": newHue
-  //   };
-  // };
-
     colorData.setShadowColor = function(color) {
-        newHue = "1px 2px 0px 1px " + color;
+        newHue = "2px 2px 5px 1px " + color;
         return {
             "-webkit-box-shadow": newHue,
             "-moz-box-shadow": newHue,
             "box-shadow": newHue
         };
     };
-    
+
     return colorData;
 
 }])
@@ -143,27 +132,16 @@ angular.module('ColorService', [])
     themesData.themeSelect = function(colorObj) {
         var themeData = {};
         var col1, col2;
-        console.log(colorObj);
-            col1 = ColorService.getHueValue(colorObj.color1);
-            col2 = ColorService.getHueValue(colorObj.color2);
+
+            col1 = ColorService.getHueValue(colorObj.color1.hue);
+            col2 = ColorService.getHueValue(colorObj.color2.hue);
             var body = [{"hue": col1}, {"hue": col2}];
-            for (i=1; i<3; i++) {
+            for (i=1; i<body.length+1; i++) {
               LightingService.lightAction(i , body[i-1]);
         }
         return themeData;
     };
 
     return themesData;
-
-
-  // var allThemes = {};
-
-  // allThemes.getThemes = function() {
-  //   var i,x;
-  //   console.log(themes.length);
-  //   for (i=0; i<themes.length; i++) {
-  //     console.log(themes[i].color1);
-  //   } 
-  // };
 
 });

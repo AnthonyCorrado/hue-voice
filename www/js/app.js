@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ColorService', 'varsData'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ColorService', 'VoiceService', 'varsData'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -104,10 +104,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 })
 
 .controller('TabsCtrl', function($scope, ColorService) {
-
-  $scope.setFontColor = function(hue) {
-    hue = "red";
-    return { "color": hue };
+  $scope.toggleColor = "";
+  $scope.fontColor = "icon-blue";
+  $scope.testy = {
+    color: 'blue',
   };
-
 });

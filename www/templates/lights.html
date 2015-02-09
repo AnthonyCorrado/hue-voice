@@ -1,21 +1,22 @@
 
 <ion-view view-title="Lights" class="light-view-container text-center">
   <ion-content class="background-style">
+
   <div class="dark-background"></div>
 
 
     <div class="list list-inset">
         <div class="light-info-container" ng-repeat="light in allLights track by $index">
-            <div ng-style="shadowColor" class="item item-dark">
+            <div ng-style="shadowColor" class="item">
 
                 <div class="row">
-                    <div class="col fix-text-left text-color-cat" >{{ light.name }}</div>
+                    <div class="col fix-text-left text-color-cat {{fontColor2}}" >{{ light.name }}</div>
 
                     <div class="col">
                         off
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="light.state.on" ng-click="toggleOn($index + 1, light)">
-                            <div  class="track {{toggleColor}}">
+                            <div class="track {{toggleColor}}">
                                 <div class="handle"></div>
                             </div>
                         </label>
@@ -28,8 +29,8 @@
                 <div ng-show="true">
                     <div class="list">
                         <div class="row">
-                            <div class="col fix-text-left text-color-cat">Brightness: {{ light.state.bri }}</div>
-                            <div ng-style="shadowColor" class="item item-royal-bg range range-blue">
+                            <div class="col fix-text-left text-color-cat {{fontColor2}}">Brightness: {{ light.state.bri }}</div>
+                            <div ng-style="shadowColor" class="item item-royal-bg range {{sliderColor}}">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="brightness" min="1" max="254"
                                     ng-model="light.state.bri"
@@ -39,8 +40,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fix-text-left text-color-cat">Hue: {{ light.state.hue }}</div>
-                            <div ng-style="shadowColor" class="item range range-balanced">
+                            <div class="col fix-text-left text-color-cat {{fontColor2}}">Hue: {{ light.state.hue }}</div>
+                            <div ng-style="shadowColor" class="item range {{sliderColor}}">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="65535"
                                     ng-model="light.state.hue"
@@ -50,11 +51,12 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col fix-text-left text-color-cat">Saturation: {{ light.state.sat }}</div>
+                            <div class="col fix-text-left text-color-cat {{fontColor2}}">Saturation: {{ light.state.sat }}</div>
                             <div ng-style="shadowColor"
-                             class="item range range-balanced">
+                             class="item range {{sliderColor}}">
                                 <i class="icon ion-ios7-sunny-outline"></i>
                                 <input type="range" name="volume" min="0" max="255"
+                                    class="test"
                                     ng-model="light.state.sat"
                                     ng-change='adjustSlider($index + 1, light, "sat")'
                                     ng-model-options="{ 'debounce': 130 }">
@@ -66,7 +68,7 @@
 
                     <div class="list">
                         <label ng-style="shadowColor" class="item item-input item-select">
-                            <div ng-style="setFontColor(light.state.hue)" class="input-label">
+                            <div class="input-label {{fontColor}}">
                                 Effect
                             </div>
                             <select ng-model="selectedEffect.value"
@@ -77,7 +79,7 @@
                     </div>
                     
                     <div class="row">
-                        <div class="col fix-text-left text-color-cat">Color Loop</div>
+                        <div class="col fix-text-left text-color-cat {{fontColor2}}">Color Loop</div>
 
                         <div class="col">
                             off

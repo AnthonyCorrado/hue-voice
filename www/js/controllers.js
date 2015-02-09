@@ -19,7 +19,18 @@ angular.module('starter.controllers', [])
   (function() {
     LightingService.getAllLights.then(function(response) {
       if (response.status === 200) {
-        $scope.allLights = response.data.lights;
+        var color = response.data.lights;
+        $scope.allLights = color;
+        var hue =  color[1].state.hue;
+        var num = parseInt(hue, 10);
+        console.log(num);
+        var setColor = ColorService.getColorValue(num);
+        var shadowObj = ColorService.setShadowColor(setColor);
+        $scope.toggleColor = "track-" + setColor;
+        $scope.sliderColor = "range-" + setColor;
+        $scope.fontColor = "label-font-" + setColor;
+        $scope.fontColor2 = "font-" + setColor;
+        $scope.shadowColor = shadowObj;
       }
       else {
         $scope.allLights = mockLightsReturn;
@@ -46,10 +57,14 @@ angular.module('starter.controllers', [])
         body = {"bri": field};
     }
     else if (param == "hue") {
+      console.log('triggered');
         field = parseInt(obj.state.hue, 10);
         var color = ColorService.getColorValue(field);
         var shadowObj = ColorService.setShadowColor(color);
         $scope.toggleColor = "track-" + color;
+        $scope.sliderColor = "range-" + color;
+        $scope.fontColor = "label-font-" + color;
+        $scope.fontColor2 = "font-" + color;
         $scope.shadowColor = shadowObj;
         body = {"hue": field};
     }
@@ -96,7 +111,6 @@ angular.module('starter.controllers', [])
   $scope.isLightOn = true;
   $scope.selectLight = function(index) {
     LightingService.selectLight(index).then(function(response) {
-      console.log(response.data);
       $scope.lights = response.data.name;
     });
   };
@@ -112,7 +126,6 @@ angular.module('starter.controllers', [])
   $scope.onVoice = function() {
     var maxMatches = 1;
     window.plugins.speechrecognizer.startRecognize(function(result){
-      console.log(result);
         $scope.$apply(function () {
           $scope.voice = result[0];
           var body = VoiceService.analyze(result[0]);
@@ -122,10 +135,6 @@ angular.module('starter.controllers', [])
             });
           }
           else if(body.length === 3) {
-            console.log(body[0]);
-            console.log(body[0].color1);
-            console.log(body.color1);
-            console.log(body);
             var themeData = {"color1": body[0], "color2": body[1]};
             ThemesModel.themeSelect(themeData);
           }
