@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('RegisterCtrl', ['$scope', 'RegisterService', function($scope, RegisterService, $timeout) {
+.controller('SettingsCtrl', ['$scope', 'RegisterService', function($scope, RegisterService, $timeout) {
 
   $scope.registerUser = function(name) {
     RegisterService.register(name)
@@ -10,10 +10,12 @@ angular.module('starter.controllers', [])
 
 }])
 
-.controller('LightsCtrl', function($scope, MockData, $timeout, LightingService, $http, ColorService) {
+.controller('LightsCtrl', function($scope, MockData, $timeout, LightingService, $http, ColorService, $rootScope) {
 
   var mockLightsReturn = MockData.getAllLights();
   $scope.allLights = mockLightsReturn;
+  $rootScope.iconColor = 'icon-white';
+  $rootScope.buttonClass = "";
 
   // retrieve initial state of lights
   (function() {
@@ -23,13 +25,14 @@ angular.module('starter.controllers', [])
         $scope.allLights = color;
         var hue =  color[1].state.hue;
         var num = parseInt(hue, 10);
-        console.log(num);
         var setColor = ColorService.getColorValue(num);
         var shadowObj = ColorService.setShadowColor(setColor);
         $scope.toggleColor = "track-" + setColor;
         $scope.sliderColor = "range-" + setColor;
         $scope.fontColor = "label-font-" + setColor;
         $scope.fontColor2 = "font-" + setColor;
+        $rootScope.iconColor = "icon-" + setColor;
+        $rootScope.buttonClass = "button-outline-" + setColor;
         $scope.shadowColor = shadowObj;
       }
       else {
@@ -57,8 +60,8 @@ angular.module('starter.controllers', [])
         body = {"bri": field};
     }
     else if (param == "hue") {
-      console.log('triggered');
         field = parseInt(obj.state.hue, 10);
+        $rootScope.iconAnimate();
         var color = ColorService.getColorValue(field);
         var shadowObj = ColorService.setShadowColor(color);
         $scope.toggleColor = "track-" + color;
@@ -66,6 +69,8 @@ angular.module('starter.controllers', [])
         $scope.fontColor = "label-font-" + color;
         $scope.fontColor2 = "font-" + color;
         $scope.shadowColor = shadowObj;
+        $rootScope.iconColor = "icon-" + color;
+        $rootScope.buttonClass = "button-outline-" + color;
         body = {"hue": field};
     }
     else {
@@ -121,7 +126,9 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('VoiceCtrl', function($scope, $timeout, VoiceService, LightingService, ThemesModel) {
+.controller('VoiceCtrl', function($scope, $timeout, VoiceService, LightingService, ThemesModel, $rootScope) {
+
+  $scope.buttonColor = $rootScope.buttonClass;
 
   $scope.onVoice = function() {
     var maxMatches = 1;
@@ -149,9 +156,11 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('ThemesCtrl', function($scope, ThemesModel, LightingService, ColorService) {
+.controller('ThemesCtrl', function($scope, ThemesModel, LightingService, ColorService, $rootScope) {
 
   $scope.themes = ThemesModel.getAllThemes();
+  $rootScope.iconColor = 'icon-white';
+
 
   $scope.colorOne = function(color1, color2) {
     return {
@@ -164,7 +173,9 @@ angular.module('starter.controllers', [])
   };
 
   $scope.themeSelect = function(colorObj) {
+
     ThemesModel.themeSelect(colorObj);
+    
   };
 
 });

@@ -14,8 +14,81 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-.ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic, .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline, .ion-ios7-heart, .ion-ios7-heart-outline {
-  color: #CCC; }
+.icon-red .ion-ios7-lightbulb, .icon-red .ion-ios7-lightbulb-outline, .icon-red .ion-ios7-mic, .icon-red .ion-ios7-mic-outline, .icon-red .ion-ios7-toggle, .icon-red .ion-ios7-toggle-outline, .icon-red .ion-ios7-heart, .icon-red .ion-ios7-heart-outline {
+  color: red; }
+
+.icon-orange .ion-ios7-lightbulb, .icon-orange .ion-ios7-lightbulb-outline, .icon-orange .ion-ios7-mic, .icon-orange .ion-ios7-mic-outline, .icon-orange .ion-ios7-toggle, .icon-orange .ion-ios7-toggle-outline, .icon-orange .ion-ios7-heart, .icon-orange .ion-ios7-heart-outline {
+  color: darkorange; }
+
+.icon-yellow .ion-ios7-lightbulb, .icon-yellow .ion-ios7-lightbulb-outline, .icon-yellow .ion-ios7-mic, .icon-yellow .ion-ios7-mic-outline, .icon-yellow .ion-ios7-toggle, .icon-yellow .ion-ios7-toggle-outline, .icon-yellow .ion-ios7-heart, .icon-yellow .ion-ios7-heart-outline {
+  color: gold; }
+
+.icon-green .ion-ios7-lightbulb, .icon-green .ion-ios7-lightbulb-outline, .icon-green .ion-ios7-mic, .icon-green .ion-ios7-mic-outline, .icon-green .ion-ios7-toggle, .icon-green .ion-ios7-toggle-outline, .icon-green .ion-ios7-heart, .icon-green .ion-ios7-heart-outline {
+  color: #33cd62; }
+
+.icon-white .ion-ios7-lightbulb, .icon-white .ion-ios7-lightbulb-outline, .icon-white .ion-ios7-mic, .icon-white .ion-ios7-mic-outline, .icon-white .ion-ios7-toggle, .icon-white .ion-ios7-toggle-outline, .icon-white .ion-ios7-heart, .icon-white .ion-ios7-heart-outline {
+  color: #f0f0f0; }
+
+.icon-blue .ion-ios7-lightbulb, .icon-blue .ion-ios7-lightbulb-outline, .icon-blue .ion-ios7-mic, .icon-blue .ion-ios7-mic-outline, .icon-blue .ion-ios7-toggle, .icon-blue .ion-ios7-toggle-outline, .icon-blue .ion-ios7-heart, .icon-blue .ion-ios7-heart-outline {
+  color: mediumblue; }
+
+.icon-indigo .ion-ios7-lightbulb, .icon-indigo .ion-ios7-lightbulb-outline, .icon-indigo .ion-ios7-mic, .icon-indigo .ion-ios7-mic-outline, .icon-indigo .ion-ios7-toggle, .icon-indigo .ion-ios7-toggle-outline, .icon-indigo .ion-ios7-heart, .icon-indigo .ion-ios7-heart-outline {
+  color: #4a0082; }
+
+.icon-hotpink .ion-ios7-lightbulb, .icon-hotpink .ion-ios7-lightbulb-outline, .icon-hotpink .ion-ios7-mic, .icon-hotpink .ion-ios7-mic-outline, .icon-hotpink .ion-ios7-toggle, .icon-hotpink .ion-ios7-toggle-outline, .icon-hotpink .ion-ios7-heart, .icon-hotpink .ion-ios7-heart-outline {
+  color: hotpink; }
+
+.icon-deeppink .ion-ios7-lightbulb, .icon-deeppink .ion-ios7-lightbulb-outline, .icon-deeppink .ion-ios7-mic, .icon-deeppink .ion-ios7-mic-outline, .icon-deeppink .ion-ios7-toggle, .icon-deeppink .ion-ios7-toggle-outline, .icon-deeppink .ion-ios7-heart, .icon-deeppink .ion-ios7-heart-outline {
+  color: deeppink; }
+
+.icon-animate .ion-ios7-lightbulb, .icon-animate .ion-ios7-lightbulb-outline, .icon-animate .ion-ios7-mic, .icon-animate .ion-ios7-mic-outline, .icon-animate .ion-ios7-toggle, .icon-animate .ion-ios7-toggle-outline, .icon-animate .ion-ios7-heart, .icon-animate .ion-ios7-heart-outline {
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out; }
+
+.button-outline-red {
+  color: red !important;
+  border-top: 1px solid red !important;
+  border-bottom: 1px solid red !important; }
+
+.button-outline-orange {
+  color: darkorange !important;
+  border-top: 1px solid orange !important;
+  border-bottom: 1px solid orange !important; }
+
+.button-outline-yellow {
+  color: gold !important;
+  border-top: 1px solid yellow !important;
+  border-bottom: 1px solid yellow !important; }
+
+.button-outline-green {
+  color: #33cd62 !important;
+  border-top: 1px solid #33cd62 !important;
+  border-bottom: 1px solid #33cd62 !important; }
+
+.button-outline-white {
+  color: #f0f0f0 !important;
+  border-top: 1px solid #f0f0f0 !important;
+  border-bottom: 1px solid #f0f0f0 !important; }
+
+.button-outline-blue {
+  color: mediumblue !important;
+  border-top: 1px solid mediumblue !important;
+  border-bottom: 1px solid mediumblue !important; }
+
+.button-outline-indigo {
+  color: #4a0082 !important;
+  border-top: 1px solid #4a0082 !important;
+  border-bottom: 1px solid #4a0082 !important; }
+
+.button-outline-hotpink {
+  color: hotpink !important;
+  border-top: 1px solid hotpink !important;
+  border-bottom: 1px solid hotpink !important; }
+
+.button-outline-deeppink {
+  color: deeppink !important;
+  border-top: 1px solid deeppink !important;
+  border-bottom: 1px solid deeppink !important; }
 
 /*!
   Ionicons, v1.5.2
@@ -5718,19 +5791,19 @@ input[type="range"] {
   padding-right: 2px;
   padding-left: 1px;
   width: auto;
-  height: 37px;
+  height: 41px;
   outline: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333), color-stop(100%, #333));
   background: linear-gradient(to right, #333 0%, #333 100%);
   background-position: center;
-  background-size: 99% 6px;
+  background-size: 99% 7px;
   background-repeat: no-repeat;
   -webkit-appearance: none; }
   input[type="range"]::-webkit-slider-thumb {
     position: relative;
-    width: 15px;
-    height: 22px;
-    border-radius: 40%;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
     background-color: #1a1a1a;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.4), 0 2px 3px rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -5739,10 +5812,10 @@ input[type="range"] {
   input[type="range"]::-webkit-slider-thumb:before {
     /* what creates the colorful line on the left side of the slider */
     position: absolute;
-    top: 8px;
+    top: 9.5px;
     left: -2001px;
     width: 2000px;
-    height: 6px;
+    height: 7px;
     background: #262626;
     content: ' '; }
   input[type="range"]::-webkit-slider-thumb:after {
@@ -7127,56 +7200,56 @@ body {
 .toggle.toggle-balanced input:checked + .track-red {
   background-color: rgba(255, 0, 0, 0.5);
   border: 1px solid rgba(255, 0, 0, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-orange {
   background-color: rgba(255, 140, 0, 0.5);
   border: 1px solid rgba(255, 140, 0, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-yellow {
   background-color: rgba(255, 215, 0, 0.5);
   border: 1px solid rgba(255, 215, 0, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-green {
   background-color: rgba(51, 205, 98, 0.5);
   border: 1px solid rgba(51, 205, 98, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-white {
   background-color: rgba(240, 240, 240, 0.5);
   border: 1px solid rgba(240, 240, 240, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-blue {
   background-color: rgba(0, 0, 205, 0.5);
   border: 1px solid rgba(0, 0, 205, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-indigo {
   background-color: rgba(74, 0, 130, 0.5);
   border: 1px solid rgba(74, 0, 130, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-hotpink {
   background-color: rgba(255, 105, 180, 0.5);
   border: 1px solid rgba(255, 105, 180, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .toggle.toggle-balanced input:checked + .track-deeppink {
   background-color: rgba(255, 20, 147, 0.5);
   border: 1px solid rgba(255, 20, 147, 0.5);
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .label-font-red {
   color: red; }
@@ -7206,8 +7279,8 @@ body {
   color: deeppink; }
 
 .label-font-red, .label-font-orange, .label-font-yellow, .label-font-green, .label-font-white, .label-font-blue, .label-font-indigo, .label-font-hotpink, .label-font-deeppink {
-  -webkit-transition: 0.7s ease-in-out;
-  transition: 0.7s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .range {
   display: -webkit-box;
@@ -7226,27 +7299,27 @@ body {
     background: #999; }
 
 .item {
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 input {
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
 
 .font-red {
-  color: rgba(255, 0, 0, 0.5); }
+  color: red; }
 
 .font-orange {
-  color: rgba(255, 140, 0, 0.5); }
+  color: darkorange; }
 
 .font-yellow {
-  color: rgba(255, 215, 0, 0.5); }
+  color: gold; }
 
 .font-green {
-  color: rgba(51, 205, 98, 0.5); }
+  color: #33cd62; }
 
 .font-white {
-  color: rgba(240, 240, 240, 0.5); }
+  color: #f0f0f0; }
 
 .font-blue {
   color: mediumblue; }
@@ -7255,11 +7328,11 @@ input {
   color: #4a0082; }
 
 .font-hotpink {
-  color: rgba(255, 105, 180, 0.5); }
+  color: hotpink; }
 
 .font-deeppink {
-  color: rgba(255, 20, 147, 0.5); }
+  color: deeppink; }
 
 .font-red, .font-orange, .font-yellow, .font-green, .font-white, .font-blue, .font-indigo, .font-hotpink, .font-deeppink {
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out; }
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }

@@ -40,12 +40,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   // Each tab has its own nav history stack:
 
-  .state('tab.sync', {
-    url: '/sync',
+  .state('tab.settings', {
+    url: '/settings',
     views: {
-      'tab-sync': {
-        templateUrl: 'templates/sync.html',
-        controller: 'RegisterCtrl'
+      'tab-settings': {
+        templateUrl: 'templates/settings.html',
+        controller: 'SettingsCtrl'
       }
     }
   })
@@ -103,6 +103,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 })
 
-.controller('TabsCtrl', function($scope, ColorService) {
+.controller('TabsCtrl', function($scope, ColorService, $rootScope, $timeout) {
+
+    $scope.animationActive = false;
+
+     $rootScope.iconAnimate = function() {
+        $scope.animationActive = true;
+        $timeout(function() {
+          $scope.animationActive = false;
+        }, 500);
+     };
 
 });

@@ -34,10 +34,10 @@ $balanced:                        rgba(51,205,98, 1);
 $stable:                          $hue-dark-gray !default;
 $dark:                            $hue-dark-gray-light !default;
 
-$range-track-height:              6px !default;
-$range-slider-width:              15px !default;
-$range-slider-height:             22px !default;
-$range-slider-border-radius:      40% !default;
+$range-track-height:              7px !default;
+$range-slider-width:              26px !default;
+$range-slider-height:             26px !default;
+$range-slider-border-radius:      100% !default;
 $range-icon-size:                 24px !default;
 
 $item-border-width:               0;
@@ -68,10 +68,123 @@ $hotpink-trans:                   rgba(255, 105, 180, 0.5) !default;
 $deeppink:                        rgba(255, 20, 147, 1) !default;
 $deeppink-trans:                  rgba(255, 20, 147, 0.5) !default;
 
-.ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
-.ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
-.ion-ios7-heart, .ion-ios7-heart-outline  {
-    color: $hue-silver; 
+.icon-red {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $red; 
+  }
+}
+.icon-orange {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $orange; 
+  }
+}
+.icon-yellow {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $yellow; 
+  }
+}
+.icon-green {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $green; 
+  }
+}
+.icon-white {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $white; 
+  }
+}
+.icon-blue {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $blue; 
+  }
+}
+.icon-indigo {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $indigo; 
+  }
+}
+.icon-hotpink {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $hotpink; 
+  }
+}
+.icon-deeppink {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    color: $deeppink; 
+  }
+}
+
+.icon-animate {
+  .ion-ios7-lightbulb, .ion-ios7-lightbulb-outline, .ion-ios7-mic,
+  .ion-ios7-mic-outline, .ion-ios7-toggle, .ion-ios7-toggle-outline,
+  .ion-ios7-heart, .ion-ios7-heart-outline  {
+    -webkit-transition: color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+  }
+}
+
+.button-outline-red {
+  color: $red !important;
+  border-top: 1px solid $red !important;
+  border-bottom: 1px solid $red !important;
+}
+.button-outline-orange {
+  color: $orange !important;
+  border-top: 1px solid orange !important;
+  border-bottom: 1px solid orange !important;
+}
+.button-outline-yellow {
+  color: $yellow !important;
+  border-top: 1px solid yellow !important;
+  border-bottom: 1px solid yellow !important;
+}
+.button-outline-green {
+  color: $green !important;
+  border-top: 1px solid $green !important;
+  border-bottom: 1px solid $green !important;
+}
+.button-outline-white {
+  color: $white !important;
+  border-top: 1px solid $white !important;
+  border-bottom: 1px solid $white !important;
+}
+.button-outline-blue {
+  color: $blue !important;
+  border-top: 1px solid $blue !important;
+  border-bottom: 1px solid $blue !important;
+}
+.button-outline-indigo {
+  color: $indigo !important;
+  border-top: 1px solid $indigo !important;
+  border-bottom: 1px solid $indigo !important;
+}
+.button-outline-hotpink {
+  color: $hotpink !important;
+  border-top: 1px solid $hotpink !important;
+  border-bottom: 1px solid $hotpink !important;
+}
+.button-outline-deeppink {
+  color: $deeppink !important;
+  border-top: 1px solid $deeppink !important;
+  border-bottom: 1px solid $deeppink !important;
 }
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -200,56 +313,56 @@ body {
 .toggle.toggle-balanced input:checked + .track-red {
     background-color: $red-trans;
     border: 1px solid $red-trans;
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-orange {
     background-color: $orange-trans;
     border: 1px solid $orange-trans;
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-yellow {
     background-color: $yellow-trans;
     border: 1px solid $yellow-trans;
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-green {
     background-color: rgba(51, 205, 98, 0.5);
     border: 1px solid rgba(51, 205, 98, 0.5);
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-white {
     background-color: $white-trans;
     border: 1px solid $white-trans;
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-blue {
     background-color: $blue-trans;
     border: 1px solid $blue-trans;
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-indigo {
     background-color: rgba(74, 0, 130, 0.5);
     border: 1px solid rgba(74, 0, 130, 0.5);
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-hotpink {
     background-color: rgba(255, 105, 180, 0.5);
     border: 1px solid rgba(255, 105, 180, 0.5);
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 .toggle.toggle-balanced input:checked + .track-deeppink {
     background-color: rgba(255, 20, 147, 0.5);
     border: 1px solid rgba(255, 20, 147, 0.5);
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 
@@ -284,8 +397,8 @@ body {
 
 .label-font-red, .label-font-orange, .label-font-yellow, .label-font-green, .label-font-white,
 .label-font-blue, .label-font-indigo, .label-font-hotpink, .label-font-deeppink {
-    -webkit-transition: 0.7s ease-in-out;
-    transition: 0.7s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 // sliders dynamic color controllers --------------------
 .range {
@@ -326,28 +439,28 @@ body {
   // }
 }
 .item {
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 input {
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .font-red {
-    color: $red-trans;
+    color: $red;
 }
 .font-orange {
-    color: $orange-trans;
+    color: $orange;
 }
 .font-yellow {
-    color: $yellow-trans;
+    color: $yellow;
 }
 .font-green {
-    color: $green-trans;
+    color: $green;
 }
 .font-white {
-    color: $white-trans;
+    color: $white;
 }
 .font-blue {
     color: $blue;
@@ -356,14 +469,14 @@ input {
     color: $indigo;
 }
 .font-hotpink {
-    color: $hotpink-trans;
+    color: $hotpink;
 }
 .font-deeppink {
-    color: $deeppink-trans;
+    color: $deeppink;
 }
 .font-red, .font-orange, .font-yellow, .font-green, .font-white, .font-blue,
 .font-indigo, .font-hotpink, .font-deeppink {
-    -webkit-transition: 0.8s ease-in-out;
-    transition: 0.8s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 

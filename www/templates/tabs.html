@@ -3,27 +3,27 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active icon-red">
+<ion-tabs ng-class="{'icon-animate': animationActive }"class="tabs-icon-top tabs-color-active">
 
   <!-- Lighting Tab -->
-  <ion-tab ng-style="testy" title="Lighting Info" icon-off="ion-ios7-lightbulb-outline" icon-on="ion-ios7-lightbulb" href="#/tab/lights">
+  <ion-tab class="{{iconColor}}" title="Lighting Info" icon-off="ion-ios7-lightbulb-outline" icon-on="ion-ios7-lightbulb" href="#/tab/lights">
     <ion-nav-view name="tab-lights"></ion-nav-view>
   </ion-tab>
 
 
   <!-- Voice Tab -->
-  <ion-tab title="Voice Input" icon-off="ion-ios7-mic-outline" icon-on="ion-ios7-mic" href="#/tab/voice_input">
+  <ion-tab class="{{iconColor}}" title="Voice Input" icon-off="ion-ios7-mic-outline" icon-on="ion-ios7-mic" href="#/tab/voice_input">
     <ion-nav-view name="tab-voice_input"></ion-nav-view>
   </ion-tab>
 
   <!-- Account Tab -->
-  <ion-tab title="Themes" icon-off="ion-ios7-heart-outline" icon-on="ion-ios7-heart" href="#/tab/themes">
+  <ion-tab class="{{iconColor}}" title="Themes" icon-off="ion-ios7-heart-outline" icon-on="ion-ios7-heart" href="#/tab/themes">
     <ion-nav-view name="tab-themes"></ion-nav-view>
   </ion-tab>
 
     <!-- User Tab -->
-  <ion-tab title="Sync" icon-off="ion-ios7-toggle-outline" icon-on="ion-ios7-toggle" href="#/tab/sync">
-    <ion-nav-view name="tab-sync"></ion-nav-view>
+  <ion-tab class="{{iconColor}}" title="Settings" icon-off="ion-ios7-toggle-outline" icon-on="ion-ios7-toggle" href="#/tab/settings">
+    <ion-nav-view name="tab-settings"></ion-nav-view>
   </ion-tab>
 
 
