@@ -1,7 +1,7 @@
 Hue Voice
 =============
 
-## Control Your Philips Hue lighting system the way it was meant to be according to every sci-fi writer. Ever.
+### Control Your Philips Hue lighting system the way it was meant to be...according to every sci-fi writer. Ever.
 
 While still a work in progress, the current generation allows you to control individual or themes of lights using voice commands. Adjust the color, the theme, or on/off status with normal human phrases. For example: "Turn the bedroom light blue." or "Turn off the desktop lamp."
 
