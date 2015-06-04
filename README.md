@@ -13,12 +13,12 @@ Manual control of lighting is also possible through a slick neon skinned interfa
 * Build out extensive voice command library
 * Allow for users to create their own keywords for colors and themes
 
-## What Was Used
+### What Was Used
 
 * Ionic Framework
 * AngularJS
 * Philips Hue API
 
-## Contact
+### Contact
 If you have any feedback, comments, or questions, please reach out! Contact me through Github or via Gmail. The choice I leave up to you. Thanks in advance! 
 Anthony - anthonymcorrado@gmail.com
